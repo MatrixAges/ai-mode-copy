@@ -1,7 +1,6 @@
 import sharp from 'sharp';
 import { join } from 'path';
 
-// 包含 Chrome Web Store, 扩展管理页, 以及工具栏(Action)所需的所有标准及 Retina 尺寸
 const sizes = [16, 19, 24, 32, 38, 48, 64, 96, 128, 256, 512];
 const inputPath = 'public/icons/icon.svg';
 const outputDir = 'public/icons';
@@ -24,18 +23,16 @@ async function generateIcons() {
         m2: 1.0
       });
 
-    // 生成彩色版本
     await basePipe.clone()
       .png({ compressionLevel: 9, adaptiveFiltering: false, quality: 100 })
       .toFile(outputPath);
 
-    // 生成灰度版本 (用于禁用状态)
     await basePipe.clone()
       .grayscale()
       .png({ compressionLevel: 9, adaptiveFiltering: false, quality: 100 })
       .toFile(grayPath);
     
-    console.log(`✨ [${size}x${size}] → 彩色 & 灰度版本已生成`);
+    console.log(`✨ [${size}x${size}] → Color & Grayscale versions generated`);
   }
   
   console.log('\n🚀 All icons generated successfully!');

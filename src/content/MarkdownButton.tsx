@@ -3,7 +3,6 @@ import { htmlToMarkdown } from '../utils/converter';
 import { findAIResponseElement, copyToClipboard } from '../utils/extractor';
 
 interface MarkdownButtonProps {
-  /** footer元素，用于定位AI回复内容 */
   footerElement: HTMLElement;
 }
 
@@ -15,17 +14,14 @@ export const MarkdownButton: React.FC<MarkdownButtonProps> = ({ footerElement })
   const handleCopy = async () => {
     try {
       setHasError(false);
-      // 查找AI回复元素
       const responseElement = findAIResponseElement(footerElement);
       
       if (!responseElement) {
         throw new Error('Could not find AI response element');
       }
 
-      // 转换为Markdown
       const markdown = await htmlToMarkdown(responseElement);
       
-      // 复制到剪贴板
       const success = await copyToClipboard(markdown);
       
       if (success) {
@@ -46,7 +42,7 @@ export const MarkdownButton: React.FC<MarkdownButtonProps> = ({ footerElement })
       onClick={handleCopy}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      aria-label="复制为 Markdown"
+      aria-label="Copy as Markdown"
       style={{
         display: 'inline-flex',
         alignItems: 'center',
@@ -64,7 +60,6 @@ export const MarkdownButton: React.FC<MarkdownButtonProps> = ({ footerElement })
         transform: isHovered ? 'translateY(-1px)' : 'translateY(0)',
       }}
     >
-      {/* Markdown图标 */}
       <svg 
         width="16" 
         height="16" 
@@ -75,7 +70,7 @@ export const MarkdownButton: React.FC<MarkdownButtonProps> = ({ footerElement })
         <path d="M14.85 3H1.15C.52 3 0 3.52 0 4.15v7.7C0 12.48.52 13 1.15 13h13.7c.63 0 1.15-.52 1.15-1.15v-7.7C16 3.52 15.48 3 14.85 3zM9 11H7V8L5.5 9.92 4 8v3H2V5h2l1.5 2L7 5h2v6zm2.99.5L9.5 8H11V5h2v3h1.5l-2.51 3.5z"/>
       </svg>
       
-      <span>{hasError ? '错误' : (copied ? '已复制!' : 'Markdown')}</span>
+      <span>{hasError ? 'Error' : (copied ? 'Copied!' : 'Markdown')}</span>
     </button>
   );
 };

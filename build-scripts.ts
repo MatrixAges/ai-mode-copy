@@ -6,7 +6,6 @@ import { fileURLToPath } from 'url'
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 async function buildScripts() {
-  // 构建 content script
   await build({
     plugins: [react()],
     configFile: false,
@@ -31,7 +30,6 @@ async function buildScripts() {
     }
   })
 
-  // 构建 background script
   await build({
     configFile: false,
     define: {

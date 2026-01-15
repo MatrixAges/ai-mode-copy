@@ -13,18 +13,13 @@ function App() {
       const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
       if (!tab?.id) return;
 
-      // 向内容脚本请求 Markdown 文本
       const response = await new Promise<any>((resolve) => {
         chrome.tabs.sendMessage(tab.id!, { action: 'copyFullConversation' }, (res) => {
-          // 忽略通信层错误，由逻辑处理 res.content
           resolve(res);
         });
       });
 
       if (response && response.content) {
-        // 调用 extractor.ts 中的 copyToClipboard
-        // 它会先尝试 modern API，如果因为焦点报错，会立即执行 textarea fallback。
-        // 由于 fallback 成功率极高，我们只需要关注它的返回值。
         const success = await copyToClipboard(response.content);
         if (success) {
           setCopied(true);
@@ -33,7 +28,6 @@ function App() {
         }
       }
       
-      // 只有完全拿不到内容或复制在各层均失败才显示错误
       setError(true);
       setTimeout(() => setError(false), 2000);
     } catch (err) {

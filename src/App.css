@@ -1,0 +1,126 @@
+:root {
+  --primary-color: #6366f1;
+  --bg-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --text-main: #1f2937;
+  --text-light: #6b7280;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #f9fafb;
+}
+
+.popup-container {
+  width: 320px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.copy-full-btn {
+  width: 100%;
+  padding: 10px 14px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.copy-full-btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.copy-full-btn.success {
+  background-color: #10b981;
+}
+
+.copy-full-btn.error {
+  background-color: #ef4444;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.app-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+}
+
+.status-card {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f3f4f6;
+}
+
+.description {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-light);
+  margin: 0 0 16px 0;
+}
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+}
+
+footer {
+  margin-top: 24px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 11px;
+  color: #9ca3af;
+  margin: 0;
+}

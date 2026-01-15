@@ -1,0 +1,32 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <mask id="m-mask">
+      <rect width="128" height="128" fill="black" />
+      <!-- 更加硬朗、具备 IBM 比例的 M 字形状 (宽度缩小10%) -->
+      <path d="M 26.2,98 L 26.2,30 L 46,30 L 64,62 L 82,30 L 101.8,30 L 101.8,98 L 86.5,98 L 86.5,52 L 64,88 L 41.5,52 L 41.5,98 Z" fill="white" />
+    </mask>
+  </defs>
+  
+  <!-- 保持渐变背景 -->
+  <rect width="128" height="128" rx="28" fill="url(#grad)"/>
+  
+  <!-- 使用 IBM 经典的 8 条纹排列 -->
+  <g mask="url(#m-mask)">
+    <rect x="15" y="30" width="98" height="4.5" fill="white" />
+    <rect x="15" y="38.5" width="98" height="4.5" fill="white" />
+    <rect x="15" y="47" width="98" height="4.5" fill="white" />
+    <rect x="15" y="55.5" width="98" height="4.5" fill="white" />
+    <rect x="15" y="64" width="98" height="4.5" fill="white" />
+    <rect x="15" y="72.5" width="98" height="4.5" fill="white" />
+    <rect x="15" y="81" width="98" height="4.5" fill="white" />
+    <rect x="15" y="89.5" width="98" height="4.5" fill="white" />
+    <rect x="15" y="98" width="98" height="4.5" fill="white" />
+  </g>
+
+  <!-- 右上角点缀一个极小的装饰圆点，增加一点现代感 -->
+  <circle cx="106" cy="22" r="4" fill="#10b981" opacity="0.8"/>
+</svg>

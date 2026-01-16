@@ -6,6 +6,9 @@
       "scripts": {
             "dev": "vite",
             "build": "vite build && bun build-scripts.ts",
+            "release": "pnpm run release:zip",
+            "release:zip": "pnpm run build && mkdir -p releases && cd dist && npx bestzip ../releases/ai-mode-copy.zip *",
+            "release:crx": "pnpm run build && mkdir -p releases && npx crx3 -o releases/ai-mode-copy.crx dist/",
             "generate-icons": "bun scripts/generate-icons.ts",
             "lint": "eslint .",
             "preview": "vite preview"
@@ -33,7 +36,9 @@
             "@types/react": "^19.2.5",
             "@types/react-dom": "^19.2.3",
             "@vitejs/plugin-react": "^5.1.1",
+            "bestzip": "^2.2.1",
             "bun": "^1.3.6",
+            "crx3": "^2.0.0",
             "eslint": "^9.39.1",
             "eslint-plugin-react-hooks": "^7.0.1",
             "eslint-plugin-react-refresh": "^0.4.24",

@@ -30,7 +30,6 @@ Google AI Mode (Search Labs) is a powerful AI search tool, but it has one frustr
 
 > **You cannot copy the AI response content!**
 
-- ❌ **Cannot select text** - Try selecting text from AI responses? Sorry, not possible
 - ❌ **Cannot copy Markdown** - Even if you manage to select it, copying only gives plain text with all formatting lost
 - ❌ **No response copy button** - While code blocks have copy buttons, the overall response doesn't
 - ❌ **Cannot save conversations** - Want to save a great AI answer? Your only option is screenshots...
@@ -173,14 +172,6 @@ ai-mode-copy/
 ├── dist/                  # Build output
 └── package.json
 ```
-
----
-
-## Contributing
-
-Issues and Pull Requests are welcome!
-
-Whether you want to report bugs, suggest new features, or contribute code directly, we welcome all contributions!
 
 ---
 

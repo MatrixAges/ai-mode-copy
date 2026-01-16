@@ -176,12 +176,6 @@ ai-mode-copy/
 
 ---
 
-## 许可证
-
-MIT License - 自由使用、修改、分发
-
----
-
 ## 贡献
 
 欢迎提交 Issue 和 Pull Request！

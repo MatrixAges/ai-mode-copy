@@ -176,12 +176,6 @@ ai-mode-copy/
 
 ---
 
-## License
-
-MIT License - Free to use, modify, and distribute
-
----
-
 ## Contributing
 
 Issues and Pull Requests are welcome!
